@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spike — оценка эффекта рекламы по динамике поискового спроса</title>
+<meta name="description" content="Telegram Mini App для маркетологов: по данным Яндекс Вордстата показывает, какая реклама подняла спрос у вас и у конкурентов, с доверительным интервалом.">
+<meta name="theme-color" content="#0B1020">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="Spike">
+<meta property="og:title" content="Spike — реклама оставляет след. Мы его измеряем.">
+<meta property="og:description" content="Оценка прироста поискового спроса от рекламных кампаний по данным Яндекс Вордстата.">
+<meta name="twitter:card" content="summary_large_image">
+<!--site:start-->
+<link rel="canonical" href="%SITE_URL%">
+<meta property="og:url" content="%SITE_URL%">
+<meta property="og:image" content="%SITE_URL%og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Spike: реклама оставляет след. Мы его измеряем.">
+<meta name="twitter:image" content="%SITE_URL%og-image.png">
+<!--site:end-->
+<link rel="icon" href="logo/spike-icon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/Inter-Regular.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="fonts/Inter-Bold.woff" as="font" type="font/woff" crossorigin>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip" href="#main">К содержимому</a>
+
+<header class="top" id="top">
+  <div class="wrap top__in">
+    <a class="top__logo" href="#top" aria-label="Spike — на верх страницы">
+      <img src="logo/spike-logo-horizontal-dark-bg.svg" alt="Spike" width="136" height="51">
+    </a>
+    <nav class="top__nav" aria-label="Разделы">
+      <a href="#how">Как работает</a>
+      <a href="#features">Возможности</a>
+      <a href="#compare">Сравнение</a>
+      <a href="#faq">Вопросы</a>
+    </nav>
+    <a class="btn btn--volt btn--sm" href="#access">Ранний доступ</a>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- 1. HERO: что это и для кого -->
+<section class="hero">
+  <div class="wrap hero__in">
+    <div class="hero__text">
+      <p class="eyebrow">Telegram Mini App <span>·</span> для маркетологов и агентств</p>
+      <h1>Реклама оставляет след. <em>Мы его измеряем.</em></h1>
+      <p class="lead">Spike по данным Яндекс Вордстата показывает, на сколько кампании — ваши и конкурентов — подняли поисковый спрос. С доверительным интервалом и без доступа к чужим кабинетам.</p>
+      <div class="hero__cta">
+        <a class="btn btn--volt btn--lg" href="#access">Получить ранний доступ</a>
+        <a class="btn btn--ghost btn--lg" href="#how">Как это работает</a>
+      </div>
+    </div>
+
+    <figure class="chart" aria-labelledby="chart-cap">
+      <div class="chart__bar mono"><span>запросы «бренд X»</span><span>пример</span></div>
+      <svg viewBox="0 0 560 300" role="img" aria-label="График спроса: пунктирный прогноз без кампании, сплошная линия факта с резким всплеском и затуханием, между ними закрашен прирост">
+        <g stroke="#243055" stroke-width="1">
+          <line x1="40" y1="40" x2="540" y2="40"/><line x1="40" y1="110" x2="540" y2="110"/>
+          <line x1="40" y1="180" x2="540" y2="180"/><line x1="40" y1="250" x2="540" y2="250"/>
+        </g>
+        <path class="chart__area" d="M196 202 L236 58 C256 150 316 196 372 202 Z"/>
+        <line class="chart__base" x1="40" y1="202" x2="540" y2="202"/>
+        <path class="chart__line" d="M40 206 L80 200 L120 207 L160 201 L196 202 L236 58 C256 150 316 196 372 202 L420 199 L470 203 L540 200"/>
+        <circle class="chart__dot" cx="236" cy="58" r="9"/>
+        <line class="chart__lead" x1="236" y1="70" x2="236" y2="196"/>
+        <g class="chart__tip" transform="translate(262 38)">
+          <rect width="206" height="62" rx="10"/>
+          <text x="14" y="26" class="t1">+18%</text>
+          <text x="14" y="47" class="t2">ДИ 95%: +12…+24%</text>
+        </g>
+        <text x="40" y="282" class="axis">до кампании</text>
+        <text x="540" y="282" class="axis" text-anchor="end">затухание</text>
+      </svg>
+      <figcaption id="chart-cap" class="chart__cap mono">
+        <span><i class="k k--base"></i>прогноз «без кампании»</span>
+        <span><i class="k k--fact"></i>фактический спрос</span>
+        <span><i class="k k--gain"></i>прирост</span>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- 2. ПРОБЛЕМА -->
+<section class="sec sec--mist" id="problem">
+  <div class="wrap">
+    <p class="kicker mono"><i>01</i> Проблема</p>
+    <h2>Всплеск спроса видно. Причину — нет.</h2>
+    <p class="sec__lead">Вы открываете график брендовых запросов и видите пик. Это реклама, инфоповод или обычный сезон? Сейчас ответить на это нечем.</p>
+    <div class="grid3">
+      <article class="card">
+        <h3>Кабинеты конкурентов закрыты</h3>
+        <p>Что и когда запускает конкурент, видно только по косвенным признакам. Сколько спроса это дало — не видно вовсе.</p>
+      </article>
+      <article class="card">
+        <h3>Сквозная аналитика — про вас одних</h3>
+        <p>Стоит от 5–6 тыс. ₽/мес (по открытым обзорам), требует интеграций и ничего не знает о рынке вокруг.</p>
+      </article>
+      <article class="card">
+        <h3>Вордстат «на глаз»</h3>
+        <p>Сезонность и новости искажают картину. Без прогноза «как было бы без кампании» вывод остаётся догадкой.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 3. КАК РАБОТАЕТ -->
+<section class="sec" id="how">
+  <div class="wrap">
+    <p class="kicker mono"><i>02</i> Как работает</p>
+    <h2>Три шага от запросов к цифре</h2>
+    <ol class="steps">
+      <li>
+        <span class="steps__n mono">1</span>
+        <h3>Берём спрос</h3>
+        <p>Выгружаем динамику запросов бренда через API Яндекс Вордстата. Доступ к рекламным кабинетам не нужен.</p>
+      </li>
+      <li>
+        <span class="steps__n mono">2</span>
+        <h3>Строим «мир без кампании»</h3>
+        <p>Модель учитывает сезонность и прогнозирует, каким был бы спрос без рекламы. Это пунктир на графике.</p>
+      </li>
+      <li>
+        <span class="steps__n mono">3</span>
+        <h3>Считаем разницу</h3>
+        <p>Разница между фактом и прогнозом — прирост. Показываем его с интервалом и вероятностью, что причина — реклама.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- 4. ВОЗМОЖНОСТИ (УТП) -->
+<section class="sec sec--ink" id="features">
+  <div class="wrap feat">
+    <div class="feat__text">
+      <p class="kicker mono"><i>03</i> Возможности</p>
+      <h2>Видите чужие кампании. Понимаете свои.</h2>
+      <ul class="feat__list">
+        <li><b>Радар конкурентов</b><span>Оповещение, когда у бренда начинается кампания, и оценка, сколько спроса она дала.</span></li>
+        <li><b>Отчёт по своей кампании</b><span>Прирост запросов, время затухания и итог в одну цифру с интервалом.</span></li>
+        <li><b>Альтернативные объяснения</b><span>Инфоповод и сезонность показаны рядом с рекламой, а не спрятаны.</span></li>
+        <li><b>Честное «причина не установлена»</b><span>Если данных мало, мы так и пишем. Без красивых, но пустых выводов.</span></li>
+      </ul>
+    </div>
+
+    <figure class="phone" aria-labelledby="phone-cap">
+      <div class="phone__head">
+        <img src="logo/spike-icon.svg" alt="" width="36" height="36">
+        <div><strong translate="no">Spike</strong><span class="mono">Mini App · радар</span></div>
+      </div>
+      <div class="bubble">
+        <p class="bubble__t">У бренда X началась кампания</p>
+        <dl class="mono">
+          <div><dt>Прирост запросов</dt><dd class="up">+18%</dd></div>
+          <div><dt>ДИ 95%</dt><dd>+12…+24%</dd></div>
+          <div><dt>Вероятность рекламы</dt><dd>0,82</dd></div>
+        </dl>
+        <p class="bubble__alt">Есть альтернативы: инфоповод, сезонность.</p>
+        <span class="bubble__btn" aria-hidden="true">Открыть отчёт</span>
+      </div>
+      <figcaption id="phone-cap" class="phone__cap mono">Макет. Цифры условные, не результат модели.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- 5. СРАВНЕНИЕ -->
+<section class="sec sec--mist" id="compare">
+  <div class="wrap">
+    <p class="kicker mono"><i>04</i> Чем отличаемся</p>
+    <h2>Дополняет привычные инструменты и отвечает на другой вопрос</h2>
+    <div class="tbl" role="table" aria-label="Сравнение Spike с альтернативами">
+      <div class="tbl__row tbl__row--h" role="row">
+        <span role="columnheader">Альтернатива</span>
+        <span role="columnheader">Что делает</span>
+        <span role="columnheader">Чем отличается Spike</span>
+      </div>
+      <div class="tbl__row" role="row">
+        <b role="cell">Brand Lift (Яндекс, VK Реклама)</b>
+        <span role="cell">Опрашивает тестовую и контрольную группы внутри купленной у платформы кампании.</span>
+        <span role="cell">Работает только для своих кампаний на площадке. Spike видит и чужие, и любые каналы, если они влияют на поиск.</span>
+      </div>
+      <div class="tbl__row" role="row">
+        <b role="cell">Сквозная аналитика</b>
+        <span role="cell">Связывает расходы, звонки, заявки и продажи.</span>
+        <span role="cell">Нужны свои данные и интеграции, и ничего не расскажет о конкурентах.</span>
+      </div>
+      <div class="tbl__row" role="row">
+        <b role="cell">Мониторинг рекламы</b>
+        <span role="cell">Следит за объявлениями в выдаче: скриншоты, ссылки.</span>
+        <span role="cell">Видит сами объявления, но не оценивает, сколько спроса они принесли.</span>
+      </div>
+      <div class="tbl__row" role="row">
+        <b role="cell">Вордстат вручную</b>
+        <span role="cell">Сравнение графиков глазами.</span>
+        <span role="cell">Сезонность и новости искажают картину. Spike вычитает прогноз «без кампании» и показывает интервал.</span>
+      </div>
+    </div>
+    <p class="fine">Условия сторонних сервисов взяты из открытых обзоров и могут меняться.</p>
+  </div>
+</section>
+
+<!-- 6. ДОВЕРИЕ (вместо отзывов — их ещё нет) -->
+<section class="sec" id="trust">
+  <div class="wrap">
+    <p class="kicker mono"><i>05</i> Доверие</p>
+    <h2>Мы не говорим «сработало». Мы говорим «+18%, интервал, вероятность»</h2>
+    <div class="grid3">
+      <article class="card card--line">
+        <p class="num mono">ДИ</p>
+        <h3>Интервал, а не одна цифра</h3>
+        <p>Любой прирост приходит с доверительным интервалом: видно, насколько оценке можно верить.</p>
+      </article>
+      <article class="card card--line">
+        <p class="num mono">p</p>
+        <h3>Вероятность причины</h3>
+        <p>Отдельно оцениваем, насколько вероятно, что всплеск дала именно реклама, а не новости или сезон.</p>
+      </article>
+      <article class="card card--line">
+        <p class="num mono">API</p>
+        <h3>Открытые данные</h3>
+        <p>Источник — Яндекс Вордстат. Ничего закрытого и недоступного вам: оценку можно перепроверить.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 7. FAQ -->
+<section class="sec sec--mist" id="faq">
+  <div class="wrap wrap--narrow">
+    <p class="kicker mono"><i>06</i> Вопросы</p>
+    <h2>Частые вопросы</h2>
+    <div class="faq">
+      <details>
+        <summary>Нужен ли доступ к моему рекламному кабинету?</summary>
+        <p>Нет. Spike работает только с динамикой поискового спроса, поэтому подходит и для своих кампаний, и для кампаний конкурентов.</p>
+      </details>
+      <details>
+        <summary>Откуда берутся данные?</summary>
+        <p>Из API Яндекс Вордстата: это открытая статистика поисковых запросов.</p>
+      </details>
+      <details>
+        <summary>Что, если данных недостаточно?</summary>
+        <p>Spike напишет «причина не установлена». Лучше честное «не знаем», чем уверенный, но ложный вывод.</p>
+      </details>
+      <details>
+        <summary>Где это работает?</summary>
+        <p>Это Telegram Mini App: открывается прямо в Telegram, ничего устанавливать не нужно.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- 8. CTA -->
+<section class="sec sec--ink cta" id="access">
+  <div class="wrap cta__in">
+    <div class="cta__text">
+      <p class="kicker mono"><i>07</i> Ранний доступ</p>
+      <h2>Узнайте, что на самом деле дала реклама</h2>
+      <p class="sec__lead">Оставьте email — напишем, когда откроем доступ к Mini App. Если хотите увидеть продукт раньше, отметьте демо.</p>
+    </div>
+
+    <form class="form" id="lead-form" name="early-access" method="POST" novalidate>
+      <p class="hp" aria-hidden="true"><label>Не заполняйте: <input name="_gotcha" tabindex="-1" autocomplete="off"></label></p>
+
+      <label class="field">
+        <span>Рабочий email</span>
+        <input type="email" name="email" inputmode="email" autocomplete="email" spellcheck="false" placeholder="name@company.ru" required aria-describedby="err-email">
+        <small class="err" id="err-email" data-for="email" hidden>Введите email в формате name@company.ru</small>
+      </label>
+
+      <label class="field">
+        <span>Кто вы</span>
+        <select name="role" required aria-describedby="err-role">
+          <option value="" disabled selected>Выберите</option>
+          <option>Маркетолог в компании</option>
+          <option>Агентство</option>
+          <option>Владелец бизнеса</option>
+          <option>Другое</option>
+        </select>
+        <small class="err" id="err-role" data-for="role" hidden>Выберите вариант</small>
+      </label>
+
+      <label class="check">
+        <input type="checkbox" name="demo" value="Да">
+        <span>Хочу демо: покажите Mini App до запуска</span>
+      </label>
+
+      <button class="btn btn--volt btn--lg btn--block" type="submit">Получить ранний доступ</button>
+      <p class="form__status" role="status" aria-live="polite"></p>
+      <p class="form__fine">Email нужен, чтобы сообщить об открытии доступа и договориться о демо. Нажимая кнопку, вы соглашаетесь на обработку email для этой цели.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__in">
+    <img src="logo/spike-logo-horizontal-dark-bg.svg" alt="Spike" width="112" height="42">
+    <p class="foot__tag">Оценка эффекта рекламы по динамике поискового спроса</p>
+    <p class="foot__meta mono">Учебный проект · Практическое занятие №3 · © <span id="year">2026</span> <span translate="no">Spike</span></p>
+  </div>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>
