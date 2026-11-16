@@ -3,3 +3,15 @@ dist/
 __pycache__/
 *.pyc
 ~$*
+Teoria/
+graphify-out/
+AGENTS.md
+AGENT.md
+/practice_1/Практическое занятие №1.docx
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
