@@ -61,12 +61,12 @@
 
 | Слайд | Источники и основание |
 |---|---|
-| 1 | Задание №7; [исходное описание идеи](https://github.com/Mikkkaaa/spike/blob/ebfa0b40945a9e2aac9bc87beb3bfe17a6ddf787/practice_1/startup_topic_proposal.pdf), с. 1; [отчёт практики №1](../practice1/README.md) |
+| 1 | Задание №7; [исходное описание идеи](https://github.com/Mikkkaaa/spike/blob/ebfa0b40945a9e2aac9bc87beb3bfe17a6ddf787/practice_1/startup_topic_proposal.pdf), с. 1; [отчёт практики №1](../practice01/README.md) |
 | 2 | [исходное описание идеи](https://github.com/Mikkkaaa/spike/blob/ebfa0b40945a9e2aac9bc87beb3bfe17a6ddf787/practice_1/startup_topic_proposal.pdf), с. 1; практика №1, раздел 5 |
 | 3 | [исходное описание идеи](https://github.com/Mikkkaaa/spike/blob/ebfa0b40945a9e2aac9bc87beb3bfe17a6ddf787/practice_1/startup_topic_proposal.pdf), с. 1–2; практика №1, раздел 1 |
 | 4 | [Яндекс Директ: исследования](https://yandex.ru/support/direct/ru/research); [Roistat: аналитика](https://roistat.com/ru/features/analytics); [Яндекс Вордстат: новый интерфейс](https://yandex.ru/support2/wordstat/ru/interface/new) |
 | 5 | [исходное описание идеи](https://github.com/Mikkkaaa/spike/blob/ebfa0b40945a9e2aac9bc87beb3bfe17a6ddf787/practice_1/startup_topic_proposal.pdf), с. 3: проверка готовности платить указана как задача пилота. Подписка и её параметры являются гипотезой. |
-| 6 | [отчёт практики №1](../practice1/README.md); [отчёт практики №3](../practice3/README.md) |
+| 6 | [отчёт практики №1](../practice01/README.md); [отчёт практики №3](../practice03/README.md) |
 | 7 | Состав команды; [исходное описание идеи](https://github.com/Mikkkaaa/spike/blob/ebfa0b40945a9e2aac9bc87beb3bfe17a6ddf787/practice_1/startup_topic_proposal.pdf), с. 1–3: необходимые компетенции следуют из плана работ |
 | 8 | [исходное описание идеи](https://github.com/Mikkkaaa/spike/blob/ebfa0b40945a9e2aac9bc87beb3bfe17a6ddf787/practice_1/startup_topic_proposal.pdf), с. 3; [документация API Вордстата](https://aistudio.yandex.ru/ru/docs/search-api/concepts/wordstat) |
 | 9 | Гипотетические сумма и условия из пользовательского задания; предварительное распределение составлено для этой работы |
