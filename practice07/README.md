@@ -2,7 +2,7 @@
 
 **Проект:** Spike: концепция оценки эффекта рекламы по динамике поискового спроса
 
-**Питч-дек:** [Spike_pitch_deck.pptx](https://github.com/Mikkkaaa/spike/blob/ebfa0b40945a9e2aac9bc87beb3bfe17a6ddf787/practice_7/Spike_pitch_deck.pptx)
+**Питч-дек:** [Открыть презентацию в PDF](Spike_pitch_deck.pdf)
 
 **Публичная страница проекта:** https://mikkkaaa.github.io/spike/practice_3/
 
